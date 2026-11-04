@@ -47,6 +47,7 @@ public class PostController {
             return ResponseEntity.status(404).build();
         }
 
+        post.setId(null);
         post.setAuthor(userOptional.get());
         post.setCreatedAt(java.time.LocalDateTime.now());
         Post savedPost = postRepository.save(post);

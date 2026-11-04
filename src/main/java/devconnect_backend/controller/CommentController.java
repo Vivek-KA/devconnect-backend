@@ -50,6 +50,7 @@ public class CommentController {
             return ResponseEntity.status(404).body(Map.of("error", "User not found"));
         }
 
+        comment.setId(null);
         comment.setPost(postOptional.get());
         comment.setAuthor(userOptional.get());
         comment.setCreatedAt(java.time.LocalDateTime.now());
